@@ -1214,11 +1214,46 @@ input::placeholder {
 
 .alert-card p {
   font-size: 17px;
-}.compare-card {
-  background: rgba(0, 0, 0, 0.3);
+}
+.compare-card {
+  width: 70%;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.compare-card h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.compare-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.city-box {
+  width: 180px;
   padding: 20px;
-  border-radius: 15px;
-  margin-top: 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  text-align: center;
+}
+
+.city-box h3 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.city-box p {
+  color: white;
+  font-size: 18px;
+  margin: 10px 0;
 }
 
 .compare-container {

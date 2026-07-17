@@ -4,21 +4,21 @@ function CompareCities({ weather, compareWeather }) {
   }
 
   return (
-    <div className="compare-card">
-      <h2>🌍 Compare Cities</h2>
+    <div className="compare-container">
+  <div className="city-box">
+    <h3>{weather.name}</h3>
+    <p>🌡️ {Math.round(weather.main.temp)}°C</p>
+    <p>💧 {weather.main.humidity}%</p>
+    <p>🌬️ {weather.wind.speed} m/s</p>
+  </div>
 
-      <div className="compare-container">
-        <div className="city-box">
-          <h3>{weather.name}</h3>
-          <p>🌡️ {weather.main.temp}°C</p>
-        </div>
-
-        <div className="city-box">
-          <h3>{compareWeather.name}</h3>
-          <p>🌡️ {compareWeather.main.temp}°C</p>
-        </div>
-      </div>
-    </div>
+  <div className="city-box">
+    <h3>{compareWeather.name}</h3>
+    <p>🌡️ {Math.round(compareWeather.main.temp)}°C</p>
+    <p>💧 {compareWeather.main.humidity}%</p>
+    <p>🌬️ {compareWeather.wind.speed} m/s</p>
+  </div>
+</div>
   );
 }
 
