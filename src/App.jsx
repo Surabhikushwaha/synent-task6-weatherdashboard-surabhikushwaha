@@ -12,6 +12,7 @@ import WeatherChart from "./Components/WeatherChart";
 import WeatherMap from "./Components/WeatherMap";
 import Favorites from "./Components/Favorites";
 import HourlyForecast from "./Components/HourlyForecast";
+import WeatherAlert from "./Components/WeatherAlert";
 
 
 
@@ -301,6 +302,12 @@ return (
   />
 )}
       {aqi && <AQI aqi={aqi} />}
+      {weather && (
+  <WeatherAlert
+    weather={weather}
+    aqi={aqi}
+  />
+)}
 <HourlyForecast hourlyForecast={hourlyForecast} />
 <Forecast forecast={forecast} />
 
