@@ -152,13 +152,19 @@ const getAQI = async (lat, lon) => {
   }
 };
 const getCompareWeather = async () => {
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${compareCity}&appid=${API_KEY}&units=metric`
-  );
+  try {
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${compareCity}&appid=${API_KEY}&units=metric`
+    );
 
-  const data = await response.json();
+    const data = await response.json();
 
-  setCompareWeather(data);
+    setCompareWeather(data);
+
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
 };
 const getWeather = async (searchCity = city) => {
   if (searchCity === "") {

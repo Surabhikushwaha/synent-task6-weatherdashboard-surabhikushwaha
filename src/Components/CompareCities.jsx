@@ -1,17 +1,23 @@
 function CompareCities({ weather, compareWeather }) {
-  if (!weather || !compareWeather) return null;
+  if (!weather || !compareWeather) {
+    return null;
+  }
 
   return (
-    <div>
+    <div className="compare-card">
       <h2>🌍 Compare Cities</h2>
 
-      <p>
-        {weather.name} - {weather.main.temp}°C
-      </p>
+      <div className="compare-container">
+        <div className="city-box">
+          <h3>{weather.name}</h3>
+          <p>🌡️ {weather.main.temp}°C</p>
+        </div>
 
-      <p>
-        {compareWeather.name} - {compareWeather.main.temp}°C
-      </p>
+        <div className="city-box">
+          <h3>{compareWeather.name}</h3>
+          <p>🌡️ {compareWeather.main.temp}°C</p>
+        </div>
+      </div>
     </div>
   );
 }
