@@ -16,6 +16,8 @@ import WeatherAlert from "./Components/WeatherAlert";
 import CompareCities from "./Components/CompareCities";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -368,7 +370,18 @@ return (
   <h1 className="section-title">
     📊 Weather Analytics
   </h1>
+<ToastContainer
+  position="top-center"
+  autoClose={3000}
+  toastStyle={{
+    width: "250px",
+    fontSize: "14px",
+    minHeight: "50px",
+    marginTop: "200px",
+  }}
+/>
 
+<Footer />
   <div className="bottom-row">
     <div className="chart-section">
       {forecast.length > 0 && (
