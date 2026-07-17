@@ -2,15 +2,15 @@ import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
 import "./App.css";
-import WeatherCard from "./components/WeatherCard";
-import SearchHistory from "./components/SearchHistory";
-import Forecast from "./components/Forecast";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import AQI from "./components/AQI";
-import WeatherChart from "./components/WeatherChart";
-import WeatherMap from "./components/WeatherMap";
-import Favorites from "./components/Favorites";
+import WeatherCard from "./Components/WeatherCard";
+import SearchHistory from "./Components/SearchHistory";
+import Forecast from "./Components/Forecast";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import AQI from "./Components/AQI";
+import WeatherChart from "./Components/WeatherChart";
+import WeatherMap from "./Components/WeatherMap";
+import Favorites from "./Components/Favorites";
 
 
 
