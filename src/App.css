@@ -1265,4 +1265,19 @@ input::placeholder {
   background: #2563eb;
   color: white;
   cursor: pointer;
+}.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.search-btn {
+  padding: 18px 30px;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
 }

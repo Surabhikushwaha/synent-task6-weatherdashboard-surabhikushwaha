@@ -265,7 +265,16 @@ return (
     placeholder="🔍 Search city"
     value={city}
     onChange={(e) => setCity(e.target.value)}
+    onKeyDown={(e) => {
+      if (e.key === "Enter") {
+        getWeather();
+      }
+    }}
   />
+
+  <button className="search-btn" onClick={getWeather}>
+    <FaSearch /> Search
+  </button>
 </div>
 
 <button onClick={getWeather}>
