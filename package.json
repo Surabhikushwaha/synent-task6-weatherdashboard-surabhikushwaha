@@ -17,6 +17,7 @@
     "react-leaflet": "^5.0.0",
     "react-speech-recognition": "^4.0.1",
     "react-spinners": "^0.17.0",
+    "react-toastify": "^11.1.0",
     "recharts": "^3.9.2"
   },
   "devDependencies": {

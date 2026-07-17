@@ -14,6 +14,8 @@ import Favorites from "./Components/Favorites";
 import HourlyForecast from "./Components/HourlyForecast";
 import WeatherAlert from "./Components/WeatherAlert";
 import CompareCities from "./Components/CompareCities";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -189,7 +191,7 @@ const getWeather = async (searchCity = city) => {
     const data = await response.json();
 
     if (data.cod === "404") {
-      setError("City not found");
+      toast.error("City not found");
       return;
     }
 
@@ -204,7 +206,7 @@ const getWeather = async (searchCity = city) => {
   ),
 ]);
   } catch (err) {
-    setError("Something went wrong");
+    toast.error("Something went wrong");
   } finally {
     setLoading(false);
   }
@@ -215,7 +217,7 @@ const addToFavorites = () => {
     weather &&
     !favorites.includes(weather.name)
   ) {
-    setFavorites([...favorites, weather.name]);
+   toast.success("Added to favorites ❤️");
   }
 };
 const removeFavorite = (cityName) => {
@@ -381,6 +383,10 @@ return (
     </div>
   </div>
 </div>
+<ToastContainer
+  position="top-right"
+  autoClose={3000}
+/>
      <Footer />
     </div>
   );
