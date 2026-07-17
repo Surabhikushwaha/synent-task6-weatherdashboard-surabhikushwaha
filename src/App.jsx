@@ -11,6 +11,7 @@ import AQI from "./Components/AQI";
 import WeatherChart from "./Components/WeatherChart";
 import WeatherMap from "./Components/WeatherMap";
 import Favorites from "./Components/Favorites";
+import HourlyForecast from "./Components/HourlyForecast";
 
 
 
@@ -24,6 +25,7 @@ function App() {
   const [history, setHistory] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [forecast, setForecast] = useState([]);
+  const [hourlyForecast, setHourlyForecast] = useState([]);
   const [unit, setUnit] = useState("C");
   
    const [aqi, setAqi] = useState(null);
@@ -127,6 +129,9 @@ const getForecast = async (cityName) => {
     console.log(error);
   }
 };
+const hourlyData = data.list.slice(0, 8);
+
+setHourlyForecast(hourlyData);
 const getAQI = async (lat, lon) => {
   try {
     const response = await fetch(
@@ -294,17 +299,19 @@ return (
   />
 )}
       {aqi && <AQI aqi={aqi} />}
-
+<HourlyForecast hourlyForecast={hourlyForecast} />
 {<SearchHistory
   history={history}
   handleRecentSearch={handleRecentSearch}
   clearHistory={clearHistory}
 />}
+
 <Favorites
   favorites={favorites}
   handleRecentSearch={handleRecentSearch}
   removeFavorite={removeFavorite}
 />
+
 <Forecast forecast={forecast} />
 <div className="analytics-section">
   <h1 className="section-title">

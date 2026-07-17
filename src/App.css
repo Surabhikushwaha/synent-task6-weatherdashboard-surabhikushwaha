@@ -1113,3 +1113,28 @@ input::placeholder {
 }.weather-card {
   padding-top: 35px;
 }
+.hourly-container {
+  margin-top: 30px;
+}
+
+.hourly-cards {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+.hourly-card {
+  min-width: 120px;
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(10px);
+}
+
+.hourly-card img {
+  width: 50px;
+}
