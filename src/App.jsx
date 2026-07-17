@@ -31,6 +31,7 @@ function App() {
   const [unit, setUnit] = useState("C");
   const [compareCity, setCompareCity] = useState("");
 const [compareWeather, setCompareWeather] = useState(null);
+const [compareLoading, setCompareLoading] = useState(false);
   
    const [aqi, setAqi] = useState(null);
   const handleRecentSearch = (cityName) => {
@@ -152,6 +153,8 @@ const getAQI = async (lat, lon) => {
   }
 };
 const getCompareWeather = async () => {
+  setCompareLoading(true);
+
   try {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${compareCity}&appid=${API_KEY}&units=metric`
@@ -160,10 +163,10 @@ const getCompareWeather = async () => {
     const data = await response.json();
 
     setCompareWeather(data);
-
-    console.log(data);
   } catch (error) {
     console.log(error);
+  } finally {
+    setCompareLoading(false);
   }
 };
 const getWeather = async (searchCity = city) => {
@@ -337,8 +340,8 @@ return (
     />
 
     <button onClick={getCompareWeather}>
-      Compare
-    </button>
+  {compareLoading ? "⏳ Loading..." : "Compare"}
+</button>
   </div>
 </div>
 

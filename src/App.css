@@ -1216,12 +1216,47 @@ input::placeholder {
   font-size: 17px;
 }
 .compare-card {
-  width: 70%;
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.15);
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.compare-card h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.compare-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.city-box {
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  width: 180px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.city-box:hover {
+  transform: translateY(-5px);
+}
+
+.city-box h3 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.city-box p {
+  color: white;
+  margin: 8px 0;
+  font-size: 16px;
 }
 
 .compare-card h2 {
