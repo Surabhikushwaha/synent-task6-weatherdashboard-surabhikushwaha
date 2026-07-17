@@ -28,6 +28,8 @@ function App() {
   const [forecast, setForecast] = useState([]);
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [unit, setUnit] = useState("C");
+  const [compareCity, setCompareCity] = useState("");
+const [compareWeather, setCompareWeather] = useState(null);
   
    const [aqi, setAqi] = useState(null);
   const handleRecentSearch = (cityName) => {
@@ -260,6 +262,15 @@ return (
       }
     }}
   />
+  <input
+  type="text"
+  placeholder="Compare with another city"
+  value={compareCity}
+  onChange={(e) => setCompareCity(e.target.value)}
+/>
+<button onClick={getCompareWeather}>
+  Compare
+</button>
   
 
   <button onClick={getWeather}>
