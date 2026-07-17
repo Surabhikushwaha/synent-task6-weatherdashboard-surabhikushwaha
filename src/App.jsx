@@ -276,10 +276,6 @@ return (
     <FaSearch /> Search
   </button>
 </div>
-
-<button onClick={getWeather}>
-    <FaSearch /> Search
-  </button>
 <div className="unit-toggle">
   <button
     className={unit === "C" ? "active-unit" : ""}
