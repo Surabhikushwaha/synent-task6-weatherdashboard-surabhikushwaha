@@ -1214,4 +1214,22 @@ input::placeholder {
 
 .alert-card p {
   font-size: 17px;
+}.compare-card {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.compare-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.city-box {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
 }
