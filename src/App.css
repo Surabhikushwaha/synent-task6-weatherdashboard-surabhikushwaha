@@ -1114,27 +1114,47 @@ input::placeholder {
   padding-top: 35px;
 }
 .hourly-container {
-  margin-top: 30px;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
 }
 
 .hourly-cards {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   overflow-x: auto;
-  padding: 10px;
+  scroll-behavior: smooth;
+
+  padding: 10px 0;
+
+  scrollbar-width: none;
+}
+
+.hourly-cards::-webkit-scrollbar {
+  display: none;
 }
 
 .hourly-card {
-  min-width: 120px;
-  padding: 15px;
+  flex: 0 0 110px;
+
+  min-width: 110px;
+  max-width: 110px;
+
+  padding: 15px 10px;
   border-radius: 15px;
   text-align: center;
 
-  background: rgba(255, 255, 255, 0.15);
-
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(10px);
-}
+}@media (max-width: 768px) {
+  .hourly-card {
+    min-width: 95px;
+    max-width: 95px;
 
-.hourly-card img {
-  width: 50px;
+    padding: 12px 8px;
+  }
+
+  .hourly-card h3 {
+    font-size: 20px;
+  }
 }
