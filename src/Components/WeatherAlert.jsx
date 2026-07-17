@@ -2,7 +2,7 @@ function WeatherAlert({ weather, aqi }) {
   let alertMessage = "";
   let alertEmoji = "";
 
-  if (weather?.main?.temp > 40) {
+  if (weather?.main?.temp > 10) {
     alertEmoji = "🌡️";
     alertMessage =
       "High temperature today. Stay hydrated!";
