@@ -346,10 +346,7 @@ return (
   weather={weather}
   compareWeather={compareWeather}
 />
-<CompareCities
-  weather={weather}
-  compareWeather={compareWeather}
-/>
+
 <Favorites
   favorites={favorites}
   handleRecentSearch={handleRecentSearch}
