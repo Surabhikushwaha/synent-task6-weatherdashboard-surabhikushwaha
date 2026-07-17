@@ -1064,4 +1064,51 @@ footer {
 
   backdrop-filter: blur(15px);
 }
+input {
+  color: black;
+}
 
+input::placeholder {
+  color: gray;
+}.search-input {
+  color: black;
+}
+
+.search-input::placeholder {
+  color: gray;
+} .weather-card {
+  background: #2f364d;
+  border-radius: 25px;
+  padding: 25px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #2d7cff, #6db7ff);
+  border-radius: 20px;
+  padding: 20px;
+  color: white;
+
+  width: 90%;
+  margin: -60px auto 25px auto;
+
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}@media (max-width: 768px) {
+  .hero-card {
+    width: 85%;
+    margin-top: -45px;
+    padding: 18px;
+  }
+
+  .weather-card {
+    padding-top: 70px;
+  }
+}
