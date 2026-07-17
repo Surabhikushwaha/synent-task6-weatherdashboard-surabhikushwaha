@@ -1232,4 +1232,13 @@ input::placeholder {
   background: rgba(255, 255, 255, 0.1);
   padding: 15px;
   border-radius: 10px;
+}.compare-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.compare-box input {
+  width: 400px;
 }

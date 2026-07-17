@@ -151,7 +151,15 @@ const getAQI = async (lat, lon) => {
     console.log("AQI error:", error);
   }
 };
+const getCompareWeather = async () => {
+  const response = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${compareCity}&appid=${API_KEY}&units=metric`
+  );
 
+  const data = await response.json();
+
+  setCompareWeather(data);
+};
 const getWeather = async (searchCity = city) => {
   if (searchCity === "") {
     setError("Search any city in the world");
@@ -215,15 +223,6 @@ const clearHistory = () => {
   const weatherCondition = weather?.weather[0]?.main;
 
  let backgroundClass = "cloudy";
- const getCompareWeather = async () => {
-  const response = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${compareCity}&appid=${API_KEY}&units=metric`
-  );
-
-  const data = await response.json();
-
-  setCompareWeather(data);
-};
 
 
 if (weatherCondition === "Clear") {
@@ -263,26 +262,27 @@ return (
 <div className="search-box">
   <input
     type="text"
-    placeholder="🔍 Search city (Delhi, Mumbai, London...)"
+    placeholder="🔍 Search city"
     value={city}
     onChange={(e) => setCity(e.target.value)}
-    onKeyDown={(e) => {
-      if (e.key === "Enter") {
-        getWeather();
-      }
-    }}
   />
-  <input
-  type="text"
-  placeholder="Compare with another city"
-  value={compareCity}
-  onChange={(e) => setCompareCity(e.target.value)}
-/>
-<button onClick={getCompareWeather}>
-  Compare
-</button>
-  
 
+  <button onClick={getWeather}>
+    <FaSearch /> Search
+  </button>
+</div>
+
+<div className="compare-box">
+  <input
+    type="text"
+    placeholder="🌍 Compare with another city"
+    value={compareCity}
+    onChange={(e) => setCompareCity(e.target.value)}
+  />
+
+  <button onClick={getCompareWeather}>
+    Compare
+  </button>
   <button onClick={getWeather}>
     <FaSearch /> Search
   </button>
