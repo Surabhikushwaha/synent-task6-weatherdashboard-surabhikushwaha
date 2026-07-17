@@ -1232,13 +1232,37 @@ input::placeholder {
   background: rgba(255, 255, 255, 0.1);
   padding: 15px;
   border-radius: 10px;
-}.compare-box {
+}.compare-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.compare-section h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.compare-box {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 15px;
-  margin-top: 20px;
 }
 
 .compare-box input {
-  width: 400px;
+  width: 350px;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  font-size: 16px;
+}
+
+.compare-box button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 15px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
 }

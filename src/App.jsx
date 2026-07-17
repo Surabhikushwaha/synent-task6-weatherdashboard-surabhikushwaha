@@ -272,22 +272,9 @@ return (
   </button>
 </div>
 
-<div className="compare-box">
-  <input
-    type="text"
-    placeholder="🌍 Compare with another city"
-    value={compareCity}
-    onChange={(e) => setCompareCity(e.target.value)}
-  />
-
-  <button onClick={getCompareWeather}>
-    Compare
-  </button>
-  <button onClick={getWeather}>
+<button onClick={getWeather}>
     <FaSearch /> Search
   </button>
-  
-</div>
 <div className="unit-toggle">
   <button
     className={unit === "C" ? "active-unit" : ""}
@@ -331,6 +318,27 @@ return (
 )}
 <HourlyForecast hourlyForecast={hourlyForecast} />
 <Forecast forecast={forecast} />
+<div className="compare-section">
+  <h2>🌍 Compare Cities</h2>
+
+  <div className="compare-box">
+    <input
+      type="text"
+      placeholder="Compare with another city"
+      value={compareCity}
+      onChange={(e) => setCompareCity(e.target.value)}
+    />
+
+    <button onClick={getCompareWeather}>
+      Compare
+    </button>
+  </div>
+</div>
+
+<CompareCities
+  weather={weather}
+  compareWeather={compareWeather}
+/>
 <CompareCities
   weather={weather}
   compareWeather={compareWeather}
