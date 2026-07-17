@@ -13,6 +13,7 @@ import WeatherMap from "./Components/WeatherMap";
 import Favorites from "./Components/Favorites";
 import HourlyForecast from "./Components/HourlyForecast";
 import WeatherAlert from "./Components/WeatherAlert";
+import CompareCities from "./Components/CompareCities";
 
 
 
@@ -214,6 +215,15 @@ const clearHistory = () => {
   const weatherCondition = weather?.weather[0]?.main;
 
  let backgroundClass = "cloudy";
+ const getCompareWeather = async () => {
+  const response = await fetch(
+    `https://api.openweathermap.org/data/2.5/weather?q=${compareCity}&appid=${API_KEY}&units=metric`
+  );
+
+  const data = await response.json();
+
+  setCompareWeather(data);
+};
 
 
 if (weatherCondition === "Clear") {
@@ -321,7 +331,10 @@ return (
 )}
 <HourlyForecast hourlyForecast={hourlyForecast} />
 <Forecast forecast={forecast} />
-
+<CompareCities
+  weather={weather}
+  compareWeather={compareWeather}
+/>
 <Favorites
   favorites={favorites}
   handleRecentSearch={handleRecentSearch}
