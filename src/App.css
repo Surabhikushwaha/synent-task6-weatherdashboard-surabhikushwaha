@@ -1111,5 +1111,5 @@ input::placeholder {
 
  
 }.weather-card {
-  padding-top: 20px;
+  padding-top: -20px;
 }
