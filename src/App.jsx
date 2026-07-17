@@ -116,7 +116,6 @@ const getForecast = async (cityName) => {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric`
     );
-    
 
     const data = await response.json();
 
@@ -125,13 +124,16 @@ const getForecast = async (cityName) => {
     );
 
     setForecast(dailyForecast);
+
+    // 👇 Ye line yahin add karo
+    const hourlyData = data.list.slice(0, 8);
+
+    setHourlyForecast(hourlyData);
+
   } catch (error) {
     console.log(error);
   }
 };
-const hourlyData = data.list.slice(0, 8);
-
-setHourlyForecast(hourlyData);
 const getAQI = async (lat, lon) => {
   try {
     const response = await fetch(
