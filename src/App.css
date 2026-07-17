@@ -1119,42 +1119,39 @@ input::placeholder {
   padding: 10px;
 }
 
-.hourly-cards {
-  display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-
-  padding: 10px 0;
-
-  scrollbar-width: none;
-}
-
-.hourly-cards::-webkit-scrollbar {
-  display: none;
-}
-
 .hourly-card {
-  flex: 0 0 110px;
+  flex: 0 0 85px;
 
-  min-width: 110px;
-  max-width: 110px;
+  min-width: 85px;
+  max-width: 85px;
 
-  padding: 15px 10px;
-  border-radius: 15px;
+  padding: 12px 8px;
+  border-radius: 14px;
+
   text-align: center;
 
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
+  background: rgba(35, 40, 55, 0.75);
+
+  backdrop-filter: blur(12px);
+
+  color: white;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}.hourly-card img {
+  width: 38px;
+}
+
+.hourly-card h3 {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.hourly-card p {
+  font-size: 13px;
 }@media (max-width: 768px) {
   .hourly-card {
-    min-width: 95px;
-    max-width: 95px;
-
-    padding: 12px 8px;
-  }
-
-  .hourly-card h3 {
-    font-size: 20px;
+    min-width: 78px;
+    max-width: 78px;
+    padding: 10px 6px;
   }
 }
