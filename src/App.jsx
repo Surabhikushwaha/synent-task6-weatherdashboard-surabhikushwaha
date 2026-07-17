@@ -16,8 +16,7 @@ import WeatherAlert from "./Components/WeatherAlert";
 import CompareCities from "./Components/CompareCities";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 
 
 
