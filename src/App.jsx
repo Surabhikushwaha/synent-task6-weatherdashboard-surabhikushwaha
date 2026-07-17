@@ -302,19 +302,20 @@ return (
 )}
       {aqi && <AQI aqi={aqi} />}
 <HourlyForecast hourlyForecast={hourlyForecast} />
-{<SearchHistory
-  history={history}
-  handleRecentSearch={handleRecentSearch}
-  clearHistory={clearHistory}
-/>}
+<Forecast forecast={forecast} />
 
 <Favorites
   favorites={favorites}
   handleRecentSearch={handleRecentSearch}
   removeFavorite={removeFavorite}
 />
+{
+<SearchHistory
+  history={history}
+  handleRecentSearch={handleRecentSearch}
+  clearHistory={clearHistory}
+/>}
 
-<Forecast forecast={forecast} />
 <div className="analytics-section">
   <h1 className="section-title">
     📊 Weather Analytics
