@@ -266,10 +266,6 @@ return (
     value={city}
     onChange={(e) => setCity(e.target.value)}
   />
-
-  <button onClick={getWeather}>
-    <FaSearch /> Search
-  </button>
 </div>
 
 <button onClick={getWeather}>
