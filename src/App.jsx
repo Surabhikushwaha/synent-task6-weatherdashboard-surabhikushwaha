@@ -14,9 +14,6 @@ import Favorites from "./Components/Favorites";
 import HourlyForecast from "./Components/HourlyForecast";
 import WeatherAlert from "./Components/WeatherAlert";
 import CompareCities from "./Components/CompareCities";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 
 
 function App() {
@@ -218,7 +215,7 @@ const addToFavorites = () => {
     !favorites.includes(weather.name)
   ) {
     setFavorites([...favorites, weather.name]);
-    toast.success("Added to favorites ❤️");
+    
   }
 };
 const removeFavorite = (cityName) => {
@@ -384,10 +381,7 @@ return (
     </div>
   </div>
 </div>
-<ToastContainer
-  position="top-right"
-  autoClose={3000}
-/>
+
      <Footer />
     </div>
   );
